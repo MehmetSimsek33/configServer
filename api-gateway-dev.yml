@@ -1,8 +1,7 @@
 eureka:
   client:
     fetch-registry: true
-    register-with-eureka: true
-    service-url:
+    serviceUrl:
       defaultZone: http://localhost:9000/eureka
   instance:
     prefer-ip-address: true
@@ -17,18 +16,3 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
-          
-management:
-  endpoint:
-    metrics:
-      enabled: true
-    prometheus:
-      enabled: true
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-  metrics:
-    export:
-      prometheus:
-        enabled: true
