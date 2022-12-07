@@ -11,12 +11,22 @@ server:
   port: 0
 spring:
   application:
-    name: FILTER
-  data:
-    mongodb:
-      database: rentalcarmongodb
-      host: localhost
-      port: 27017
+    name: stock
+  datasource:
+    password: 6352
+    url: jdbc:postgresql://localhost:5432/rentacarinventorydb
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+      javax:
+        persistence:
+          validation:
+            mode: none
+    show-sql: true
   kafka:
     consumer:
       auto-offset-reset: earliest
@@ -34,19 +44,3 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     topic:
       name: RENTAL_TOPIC5
-      
-management:
-  endpoint:
-    metrics:
-      enabled: true
-    prometheus:
-      enabled: true
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-  metrics:
-    export:
-      prometheus:
-        enabled: true
-

@@ -12,11 +12,6 @@ server:
 spring:
   application:
     name: stock
-  data:
-    mongodb:
-      database: rentalcarmongodb
-      host: localhost
-      port: 27017
   datasource:
     password: 6352
     url: jdbc:postgresql://localhost:5432/rentacarinventorydb
@@ -49,18 +44,3 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     topic:
       name: RENTAL_TOPIC5
-      
-management:
-  endpoint:
-    metrics:
-      enabled: true
-    prometheus:
-      enabled: true
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-  metrics:
-    export:
-      prometheus:
-        enabled: true     
