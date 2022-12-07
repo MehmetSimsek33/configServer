@@ -17,7 +17,7 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
-          management:
+          
 management:
   endpoint:
     metrics:
